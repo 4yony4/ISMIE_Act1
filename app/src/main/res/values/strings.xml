@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Actividad 1 Curso Kotlin</string>
+    <string name="btn1Text">Sumar</string>
+    <string name="btn2Text">Restado</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.App1" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/jersey10regular</item>
+        <item name="android:textColor">#FF5722</item> <!-- Example color: deep orange -->
+    </style>
+
+    <style name="Theme.App1" parent="Base.Theme.App1" />
+</resources>
