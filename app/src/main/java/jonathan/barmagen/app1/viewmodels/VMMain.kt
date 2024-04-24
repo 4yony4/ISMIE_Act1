@@ -3,7 +3,29 @@ package jonathan.barmagen.app1.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
+class VMMain : ViewModel() {
+
+    private val _sContador = MutableStateFlow("0")
+    val sContador: StateFlow<String> = _sContador
+    val etCantContador = MutableStateFlow("1")
+
+    var iContador: Int = 0
+
+    fun onBtn1Clicked() {
+        iContador+=etCantContador.value.toInt()
+        _sContador.value = iContador.toString()
+    }
+
+    fun onBtn2Clicked() {
+        iContador-=etCantContador.value.toInt()
+        _sContador.value = iContador.toString()
+    }
+}
+
+/*
 class VMMain : ViewModel() {
 
     private val _sContador= MutableLiveData<String>().apply {
@@ -27,3 +49,6 @@ class VMMain : ViewModel() {
     }
 
 }
+
+
+ */
