@@ -41,11 +41,11 @@ class MainActivity : AppCompatActivity() {
         setupObservers()
 
 
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }*/
+        }
     }
 
 
@@ -56,7 +56,13 @@ class MainActivity : AppCompatActivity() {
         btnMenos.setOnClickListener { vmmain.onBtn2Clicked() }
         etCantContador.addTextChangedListener {
             it?.toString()?.let { text ->
-                vmmain.etCantContador.value = text
+                if (text.matches(Regex("^\\d+$"))) {
+                    vmmain.etCantContador.value = text
+                } else {
+                    vmmain.etCantContador.value = "0"
+                    etCantContador.error = "Debe usarse solo numeros."
+                }
+                //vmmain.etCantContador.value = text
             }
         }
     }
